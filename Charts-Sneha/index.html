@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alternative Fuel Stations</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.0/moment.min.js"></script>
+</head>
+<body>
+    <h2>Alternative Fuel Stations Distribution</h2>
+    <select id="selDataset">
+        <option value="">--Please choose an option--</option>
+        <option value="BD">Biodiesel (B20 and above)</option>
+        <option value="CNG">Compressed Natural Gas (CNG)</option>
+        <option value="ELEC">Electric</option>
+        <option value="E85">Ethanol (E85)</option>
+        <option value="HY">Hydrogen</option>
+        <option value="LNG">Liquefied Natural Gas (LNG)</option>
+        <option value="LPG">Propane (LPG)</option>
+        <option value="RD">Renewable Diesel (R20 and above)</option>
+    </select>
+    <div id="plot"></div>
+    <script src="data.js"></script>
+    <script src="plots.js"></script>
+</body>
+</html>
