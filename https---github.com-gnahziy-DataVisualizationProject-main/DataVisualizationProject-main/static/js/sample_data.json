@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Charger 1",
+        "latitude": 51.505,
+        "longitude": -0.09,
+        "status": "available"
+    },
+    {
+        "id": 2,
+        "name": "Charger 2",
+        "latitude": 51.51,
+        "longitude": -0.1,
+        "status": "occupied"
+    },
+    {
+        "id": 3,
+        "name": "Charger 3",
+        "latitude": 51.495,
+        "longitude": -0.08,
+        "status": "available"
+    }
+]
