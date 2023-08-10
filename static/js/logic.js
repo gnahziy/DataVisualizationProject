@@ -63,7 +63,7 @@ function createMarkers(response) {
 
   // Define the green icon
   let greenIcon = new L.Icon({
-    iconUrl: 'Resources/greenIcon.png',  // URL to the green icon
+    iconUrl: '/static/Resources/greenIcon',  // URL to the green icon
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL to the shadow image
     iconSize: [40, 40], // size of the icon
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
@@ -73,7 +73,7 @@ function createMarkers(response) {
 
   // Define the bd icon
   let bdIcon = new L.Icon({
-    iconUrl: 'Resources/biodieselIcon.png',  // URL to the green icon
+    iconUrl: '/static/Resources/biodieselIcon.png',  // URL to the green icon
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL to the shadow image
     iconSize: [28, 40], // size of the icon
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
@@ -83,7 +83,7 @@ function createMarkers(response) {
 
   // Define the cng icon
   let cngIcon = new L.Icon({
-    iconUrl: 'Resources/cngIcon.png',  // URL to the green icon
+    iconUrl: '/static/Resources/cngIcon.png',  // URL to the green icon
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL to the shadow image
     iconSize: [40, 40], // size of the icon
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
@@ -93,7 +93,7 @@ function createMarkers(response) {
 
   // Define the ethanol icon
   let e85Icon = new L.Icon({
-    iconUrl: 'Resources/ethanolIcon.png',  // URL to the green icon
+    iconUrl: '/static/Resources/ethanolIcon.png',  // URL to the green icon
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL to the shadow image
     iconSize: [40, 40], // size of the icon
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
@@ -103,7 +103,7 @@ function createMarkers(response) {
 
     // Define the hydro icon
     let hydroIcon = new L.Icon({
-      iconUrl: 'Resources/hydroIcon.png',  // URL to the green icon
+      iconUrl: '/static//Resources/hydroIcon.png',  // URL to the green icon
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL to the shadow image
       iconSize: [40, 40], // size of the icon
       iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
@@ -113,7 +113,7 @@ function createMarkers(response) {
 
     // Define the LPG icon
     let lpgIcon = new L.Icon({
-      iconUrl: 'Resources/lpgIcon.png',  // URL to the lpg icon
+      iconUrl: '/static/Resources/lpgIcon.png',  // URL to the lpg icon
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL to the shadow image
       iconSize: [40, 40], // size of the icon
       iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
