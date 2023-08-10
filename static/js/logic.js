@@ -218,6 +218,6 @@ function createMarkers(response) {
 
 
 // Perform an API call
-d3.json(`https://developer.nrel.gov/api/alt-fuel-stations/v1.json?state=CT&limit=200&api_key=${API_KEY}`)
+d3.json(`https://developer.nrel.gov/api/alt-fuel-stations/v1.json?state=CT&limit=200&api_key=${api_key}`)
   .then(createMarkers)
   .catch(error => console.error('Error:', error));
