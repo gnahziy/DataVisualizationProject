@@ -1,5 +1,5 @@
 // Objects for state/year bar chart
- var layout = 
+var layout = 
 {
   width: 1500,
   height: 900,
@@ -11,6 +11,7 @@
     }},
   grid: {rows: 2, columns: 1, pattern: 'independent' },
   xaxis: { tickangle: -45,
+    autorange : true,
       titlefont: {
           family: 'Arial, monospace',
           size: 14,
@@ -26,7 +27,7 @@
       }
   },
   showlegend: false
-}
+};
 
  // Objects for state/year bar chart
 var config = {responsive: true};
@@ -96,7 +97,7 @@ function init()
   Plotly.newPlot('plot', plotdata, layout, config );
 
   });
-}
+};
 
 init();
 
@@ -113,7 +114,25 @@ console.log(`fuelType > ${fuelTypeCode}`);
 if (fuelTypeCode != "ALL")
     {
       var stateCounts = data.reduce(function (result, station) {
-        result[station.state] = ((result[station.state] && (station.fuel_type_code === fuelTypeCode)) ? result[station.state]: 0) + 1; 
+        var existsInResult = result[station.state];
+        var withSameFuelType = station.fuel_type_code === fuelTypeCode;
+        console.log(`fuelType > ${fuelTypeCode}`);
+        console.log(`station.state > ${station.state}`);
+        console.log(`station.fuel_type_code > ${station.fuel_type_code}`);
+        console.warn("existsInResult stateCount", existsInResult);
+        console.warn("withSameFuelType stateCount", withSameFuelType);
+        let newCount = result[station.state];
+        if (withSameFuelType) {
+          if (!existsInResult) {
+            newCount = 1;
+          } else {
+            newCount = result[station.state] + 1;
+          }
+        }
+
+        result[station.state] = newCount; 
+        console.warn("newCount stateCount", newCount);
+
         return result;
       }, {});
       
@@ -123,13 +142,26 @@ if (fuelTypeCode != "ALL")
       var yearCounts = data.reduce(function (result, station) {
         var openDate = new Date(station.open_date);
         var yyyyMM =  moment(openDate).format('YYYY-MM');
-        result[yyyyMM] = ((result[yyyyMM] && (station.fuel_type_code === fuelTypeCode)) ? result[yyyyMM]: 0) + 1; 
+        var existsInResult = result[yyyyMM];
+        var withSameFuelType = station.fuel_type_code === fuelTypeCode;
+        console.warn("existsInResult yearCounts", existsInResult);
+        console.warn("withSameFuelType yearCounts", withSameFuelType);
+        let newCount = result[yyyyMM];
+        if (withSameFuelType) {
+          if (!existsInResult) {
+            newCount = 1;
+          } else {
+            newCount = result[yyyyMM] + 1;
+          }
+        }
+
+        result[yyyyMM] = newCount; 
         return result;
       }, {});
       
       console.log(`updated yearCounts > ${JSON.stringify(yearCounts)}`);
     }
-else 
+    else 
     {
       var stateCounts = data.reduce(function (result, station) {
         result[station.state] = ((result[station.state]) || 0) + 1; 
@@ -185,7 +217,7 @@ let stateData = {
 
   return [stateData,yearData];
 // });
-}
+};
 
 // Drop Down Menu Actions
 function getData() 
@@ -202,6 +234,3 @@ function getData()
   Plotly.newPlot('plot', plotdata, layout, config );});
 }
 d3.selectAll("#selDataset").on("change", getData);
-
-
-
