@@ -63,7 +63,7 @@ function createMarkers(response) {
 
   // Define the green icon
   let greenIcon = new L.Icon({
-    iconUrl: '/static/Resources/greenIcon',  // URL to the green icon
+    iconUrl: '/static/Resources/greenIcon.png',  // URL to the green icon
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', // URL to the shadow image
     iconSize: [40, 40], // size of the icon
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
